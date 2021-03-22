@@ -81,4 +81,4 @@ gtsamaddexamplesglob("*.cpp" "" "${CONVENIENCE_LIB_NAME}")
 # ##############################################################################
 # Build MATLAB wrapper (CMake tracks the dependecy to link with GTSAM through
 # our project's static library)
-matlab_wrap("example.h" "${CONVENIENCE_LIB_NAME}" "" "" "")
+matlab_wrap("example.i" "${CONVENIENCE_LIB_NAME}" "" "" "")

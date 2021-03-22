@@ -10,7 +10,7 @@
  * -------------------------------------------------------------------------- */
 
 /**
- * @file     example.h
+ * @file     example.i
  * @brief    Example wrapper interface file
  * @author   Richard Roberts, Varun Agrawal
  */
