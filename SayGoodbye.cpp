@@ -18,6 +18,6 @@
 #include <example/PrintExamples.h>
 
 int main(int argc, char *argv[]) {
-  example::PrintExamples().sayGoodbye();
+  example::PrintExample().sayGoodbye();
   return 0;
 }

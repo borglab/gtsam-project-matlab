@@ -17,12 +17,25 @@
 
 #pragma once
 
+#include <boost/shared_ptr.hpp>
 #include <iostream>
 #include <string>
 
 namespace example {
 
-class PrintExamples {
+template <typename T, typename U>
+class Counter {
+ public:
+  size_t count = 0;
+};
+
+template <typename T, typename U>
+class Fun {
+ public:
+  Counter<T, U> getCounter() const { return Counter<T, U>(); }
+};
+
+class PrintExample {
  public:
   ///< Helper method for Matlab
   void print(const std::string& s = "") const;
@@ -41,5 +54,7 @@ std::string getHelloString();
 std::string getGoodbyeString();
 
 }  // namespace internal
+
+void consumePrinter(boost::shared_ptr<PrintExample>& pe) {}
 
 }  // namespace example

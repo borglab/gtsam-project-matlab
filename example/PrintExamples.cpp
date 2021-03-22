@@ -21,16 +21,15 @@
 
 namespace example {
 
-void PrintExamples::print(const std::string& s) const {
-  std::cout << "PrintExamples object" << (s.empty() ? "" : " " + s)
-            << std::endl;
+void PrintExample::print(const std::string& s) const {
+  std::cout << "PrintExample object" << (s.empty() ? "" : " " + s) << std::endl;
 }
 
-void PrintExamples::sayHello() const {
+void PrintExample::sayHello() const {
   std::cout << internal::getHelloString() << std::endl;
 }
 
-void PrintExamples::sayGoodbye() const {
+void PrintExample::sayGoodbye() const {
   std::cout << internal::getGoodbyeString() << std::endl;
 }
 

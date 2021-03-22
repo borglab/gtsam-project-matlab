@@ -12,21 +12,29 @@
 /**
  * @file     example.h
  * @brief    Example wrapper interface file
- * @author   Richard Roberts
+ * @author   Richard Roberts, Varun Agrawal
  */
 
-// This is an interface file for automatic MATLAB wrapper generation.  See
-// gtsam.h for full documentation and more examples.
+// This is an interface file for automatic MATLAB wrapper generation.
+// See `wrap` for full documentation and more examples.
 
 #include <example/PrintExamples.h>
 
 namespace example {
 
-class PrintExamples {
-  PrintExamples();
-  void print(std::string s) const;
+template<T = {size_t, int}, U = {float, double}>
+class Fun {
+};
+
+typedef example::Fun<size_t, double> FunCounter;
+
+class PrintExample {
+  PrintExample();
+  void print(string s) const;
   void sayHello() const;
   void sayGoodbye() const;
 };
+
+void consumePrinter(example::PrintExample** pe);
 
 }  // namespace example
