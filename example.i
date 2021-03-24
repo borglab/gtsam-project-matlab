@@ -35,6 +35,6 @@ class PrintExample {
   void sayGoodbye() const;
 };
 
-void consumePrinter(example::PrintExample** pe);
+void consumePrinter(example::PrintExample* pe);
 
 }  // namespace example

@@ -6,7 +6,7 @@
 # To create your own project, replace "example" with the actual name of your
 # project
 cmake_minimum_required(VERSION 3.0)
-project(example CXX C)
+project(example_matlab CXX C)
 
 # Include GTSAM CMake tools
 find_package(GTSAMCMakeTools)
@@ -77,6 +77,13 @@ gtsamaddtestsglob("example" "tests/test*.cpp" "" "${CONVENIENCE_LIB_NAME}")
 # Build scripts (CMake tracks the dependecy to link with GTSAM through our
 # project's static library)
 gtsamaddexamplesglob("*.cpp" "" "${CONVENIENCE_LIB_NAME}")
+
+# We print out our configuration for an easy visual check
+message("========== Configuration Options ==========")
+message(STATUS "Project:                  ${PROJECT_NAME}")
+message(STATUS "MATLAB Root:              ${MATLAB_ROOT}")
+message(STATUS "Mex Compiler:             ${Matlab_MEX_COMPILER}")
+message("===========================================")
 
 # ##############################################################################
 # Build MATLAB wrapper (CMake tracks the dependecy to link with GTSAM through
