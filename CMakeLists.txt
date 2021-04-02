@@ -78,14 +78,14 @@ gtsamaddtestsglob("example" "tests/test*.cpp" "" "${CONVENIENCE_LIB_NAME}")
 # project's static library)
 gtsamaddexamplesglob("*.cpp" "" "${CONVENIENCE_LIB_NAME}")
 
+# ##############################################################################
+# Build MATLAB wrapper (CMake tracks the dependecy to link with GTSAM through
+# our project's static library)
+matlab_wrap("example.i" "${CONVENIENCE_LIB_NAME}" "" "" "")
+
 # We print out our configuration for an easy visual check
 message("========== Configuration Options ==========")
 message(STATUS "Project:                  ${PROJECT_NAME}")
 message(STATUS "MATLAB Root:              ${MATLAB_ROOT}")
 message(STATUS "Mex Compiler:             ${Matlab_MEX_COMPILER}")
 message("===========================================")
-
-# ##############################################################################
-# Build MATLAB wrapper (CMake tracks the dependecy to link with GTSAM through
-# our project's static library)
-matlab_wrap("example.i" "${CONVENIENCE_LIB_NAME}" "" "" "")
