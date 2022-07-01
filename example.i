@@ -24,6 +24,7 @@ namespace example {
 
 template<T = {size_t, int}, U = {float, double}>
 class Fun {
+  Fun();
 };
 
 typedef example::Fun<size_t, double> FunCounter;
