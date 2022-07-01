@@ -40,6 +40,10 @@ option(
   "Enable/Disable appending the build type to the name of compiled libraries"
   ON)
 
+# Copy matlab.h to the correct folder.
+configure_file(${PROJECT_SOURCE_DIR}/matlab/matlab.h
+  ${PROJECT_BINARY_DIR}/wrap/matlab.h COPYONLY)
+
 # Include the Matlab related code.
 include(MatlabWrap)
 
@@ -81,7 +85,7 @@ gtsamaddexamplesglob("*.cpp" "" "${CONVENIENCE_LIB_NAME}")
 # ##############################################################################
 # Build MATLAB wrapper (CMake tracks the dependecy to link with GTSAM through
 # our project's static library)
-matlab_wrap("example.i" "${CONVENIENCE_LIB_NAME}" "" "" "")
+matlab_wrap("example.i" "${CONVENIENCE_LIB_NAME}" "" "" "" "")
 
 # We print out our configuration for an easy visual check
 message("========== Configuration Options ==========")
