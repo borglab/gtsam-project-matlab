@@ -8,6 +8,11 @@
 cmake_minimum_required(VERSION 3.0)
 project(example_matlab CXX C)
 
+# Enforce c++17 standards
+add_compile_options(-std=c++17) # CMake 3.1 and earlier
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # Include GTSAM CMake tools
 find_package(GTSAMCMakeTools)
 include(GtsamBuildTypes) # Load build type flags and default to Debug mode
