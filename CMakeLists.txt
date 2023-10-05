@@ -82,10 +82,14 @@ gtsamaddtestsglob("example" "tests/test*.cpp" "" "${CONVENIENCE_LIB_NAME}")
 # project's static library)
 gtsamaddexamplesglob("*.cpp" "" "${CONVENIENCE_LIB_NAME}")
 
+# Variable for Matlab wrapper CMake command
+set(GTSAM_ENABLE_BOOST_SERIALIZATION ON)
+set(MexFlags "")
+set(FilesToIgnore "")
 # ##############################################################################
 # Build MATLAB wrapper (CMake tracks the dependecy to link with GTSAM through
 # our project's static library)
-matlab_wrap("example.i" "${CONVENIENCE_LIB_NAME}" "" "" "" "")
+matlab_wrap("example.i" "${CONVENIENCE_LIB_NAME}" "" "" "${mexFlags}" "${FilesToIgnore}" ON)
 
 # We print out our configuration for an easy visual check
 message("========== Configuration Options ==========")
