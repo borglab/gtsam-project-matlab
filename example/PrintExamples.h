@@ -17,7 +17,6 @@
 
 #pragma once
 
-#include <boost/shared_ptr.hpp>
 #include <iostream>
 #include <string>
 
@@ -55,6 +54,6 @@ std::string getGoodbyeString();
 
 }  // namespace internal
 
-void consumePrinter(boost::shared_ptr<PrintExample>& pe) {}
+void consumePrinter(std::shared_ptr<PrintExample>& pe) {}
 
 }  // namespace example
