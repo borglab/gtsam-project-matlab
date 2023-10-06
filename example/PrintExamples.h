@@ -13,11 +13,13 @@
  * @file     print_examples.h
  * @brief    Example library file
  * @author   Richard Roberts
+ * @author   Varun Agrawal
  */
 
 #pragma once
 
 #include <iostream>
+#include <memory>
 #include <string>
 
 namespace example {
