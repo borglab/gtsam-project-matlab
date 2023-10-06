@@ -93,7 +93,7 @@ set(FilesToIgnore "")
 # ##############################################################################
 # Build MATLAB wrapper (CMake tracks the dependecy to link with GTSAM through
 # our project's static library)
-matlab_wrap("example.i" "${CONVENIENCE_LIB_NAME}" "" "" "${mexFlags}" "${FilesToIgnore}" ON)
+matlab_wrap("example.i" "${PROJECT_NAME}" "" "" "${mexFlags}" "${FilesToIgnore}" ON)
 
 # We print out our configuration for an easy visual check
 message("========== Configuration Options ==========")
