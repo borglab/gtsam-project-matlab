@@ -65,14 +65,13 @@ find_package(GTSAM REQUIRED) # Uses installed package
 
 # ##############################################################################
 # Build static library from common sources
-set(CONVENIENCE_LIB_NAME ${PROJECT_NAME})
-add_library(${CONVENIENCE_LIB_NAME} SHARED example/PrintExamples.h
+add_library(${PROJECT_NAME} SHARED example/PrintExamples.h
                                            example/PrintExamples.cpp)
-target_link_libraries(${CONVENIENCE_LIB_NAME} gtsam)
+target_link_libraries(${PROJECT_NAME} gtsam)
 
 # Install library
 install(
-  TARGETS ${CONVENIENCE_LIB_NAME}
+  TARGETS ${PROJECT_NAME}
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
   RUNTIME DESTINATION bin)
@@ -80,12 +79,12 @@ install(
 # ##############################################################################
 # Build tests (CMake tracks the dependecy to link with GTSAM through our
 # project's static library)
-gtsamaddtestsglob("example" "tests/test*.cpp" "" "${CONVENIENCE_LIB_NAME}")
+gtsamaddtestsglob("example" "tests/test*.cpp" "" "${PROJECT_NAME}")
 
 # ##############################################################################
 # Build scripts (CMake tracks the dependecy to link with GTSAM through our
 # project's static library)
-gtsamaddexamplesglob("*.cpp" "" "${CONVENIENCE_LIB_NAME}")
+gtsamaddexamplesglob("*.cpp" "" "${PROJECT_NAME}")
 
 # Variable for Matlab wrapper CMake command
 set(GTSAM_ENABLE_BOOST_SERIALIZATION ON)
