@@ -84,7 +84,7 @@ gtsamaddtestsglob("example" "tests/test*.cpp" "" "${PROJECT_NAME}")
 # ##############################################################################
 # Build scripts (CMake tracks the dependecy to link with GTSAM through our
 # project's static library)
-gtsamaddexamplesglob("*.cpp" "" "${PROJECT_NAME}")
+gtsamaddexamplesglob("*.cpp" "" "${PROJECT_NAME}" ON)
 
 # Variable for Matlab wrapper CMake command
 set(GTSAM_ENABLE_BOOST_SERIALIZATION ON)
